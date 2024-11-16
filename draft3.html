@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Interactive Portfolio</title>
+  <title>Reyan Shihabi</title>
   <style>
-    /* General Reset */
+ 
     * {
       margin: 0;
       padding: 0;
@@ -19,7 +19,7 @@
       background-color: #f4f9fd;
     }
 
-    /* Navbar */
+    /* Nav */
     .navbar {
       position: fixed;
       top: 10px;
@@ -50,7 +50,7 @@
       transform: scale(1.1);
     }
 
-    /* Sections */
+    /* Section style */
     section {
       min-height: 100vh;
       padding: 2rem;
@@ -85,7 +85,6 @@
       border-radius: 20px;
     }
 
-    /* Alternating Layout for Sections */
     .section-content {
       display: flex;
       align-items: center;
@@ -100,16 +99,16 @@
       background-color: #a1c4fd;
       margin: 20px;
       flex-shrink: 0;
-      overflow: hidden; /* Ensures the image stays within the rounded container */
+      overflow: hidden; 
     }
 
     .section-text {
+
       max-width: 500px;
       padding: 10px;
       text-align: left;
     }
 
-    /* Alternating section image positions */
     .section:nth-child(odd) .section-content {
       flex-direction: row;
     }
@@ -118,23 +117,22 @@
       flex-direction: row-reverse;
     }
 
-    /* Image fit inside the circle */
+ 
     .section-image img {
       width: 100%;
       height: 100%;
-      object-fit: cover; /* Ensures the image covers the container without distortion */
+      object-fit: cover; 
     }
 
-    /* Colors and styles for each section */
     #logo { background-color: #e0f7fa; }
     #about { background-color: #f1f8e9; }
     #education { background-color: #e3f2fd; }
     #skills { background-color: #fce4ec; }
     #experience { background-color: #e1f5fe; }
     #achievements { background-color: #fff3e0; }
-    #contact { background-color: #ffebee; }
+    #contact { background-color: #e0f7fa; }
 
-    /* Button styles for interaction */
+ 
     .button {
       padding: 0.6rem 1.2rem;
       border: 2px solid #6c8cd5;
@@ -151,7 +149,7 @@
       background-color: #6c8cd5;
     }
 
-    /* Footer */
+    /* Foot */
     footer {
       padding: 1rem;
       text-align: center;
@@ -161,7 +159,7 @@
       border-top-right-radius: 20px;
     }
 
-    /* Animations */
+    /* Animation */
     section {
       opacity: 0;
       transform: translateY(100px);
@@ -172,12 +170,304 @@
       transform: translateY(0);
       transition: opacity 0.6s ease, transform 0.6s ease;
     }
+/* Section styling */
+#logo {
+  position: relative;
+  padding: 50px;
+  background: linear-gradient(to bottom, #f0f8ff, #e6e9f0);
+  overflow: hidden;
+}
+
+.section-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  z-index: 2;
+  position: relative;
+}
+
+.section-image img {
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Modify section-text styling for horizontal alignment */
+.section-text {
+  text-align: left;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1.5;
+}
+
+/* Ensure section-content aligns content horizontally */
+.section-content {
+  flex-direction: row; /* Ensure items are aligned horizontally */
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Optional: Center align text and image if necessary */
+.section-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px; /* Add spacing between image and text */
+}
+
+/* For H1 to stretch horizontally */
+.section-text h1 {
+  text-align: left;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #333;
+}
+
+/* Bubble animation */
+.bubbles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.bubbles span {
+  position: absolute;
+  bottom: -10%;
+  width: 20px;
+  height: 20px;
+  background: rgba(108, 140, 213, 0.4);
+  border-radius: 50%;
+  animation: bubble 10s linear infinite;
+  opacity: 0.6;
+}
+
+.bubbles span:nth-child(odd) {
+  width: 25px;
+  height: 25px;
+  background: rgba(108, 140, 213, 0.6);
+}
+
+@keyframes bubble {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) scale(1.5);
+    opacity: 0;
+  }
+}
+/* Section styling */
+#about {
+  padding: 60px 20px;
+  background: linear-gradient(to right, #e3f2fd, #ffffff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-content {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 30px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.section-image {
+  flex: 1;
+  text-align: center;
+  animation: fadeIn 2s ease-out;
+}
+
+.section-image img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.5s ease;
+}
+
+.section-image img:hover {
+  transform: scale(1.1);
+}
+
+.section-text {
+  display: flex; /* Enable flexbox layout */
+  flex-direction: row; /* Arrange items (paragraphs) in a row */
+  gap: 20px; /* Add space between paragraphs */
+  text-align: left; /* Ensure text alignment remains left */
+  align-items: center; /* Vertically align paragraphs if their heights differ */
+  flex-wrap: wrap; /* Optional: Allow wrapping if the content exceeds the container width */
+}
+
+.section-text h1 {
+  font-size: 2.5em;
+  color: #0056b3;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.section-text h1::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 4px;
+  background: #0056b3;
+  margin-top: 10px;
+  border-radius: 2px;
+}
+
+.section-text p {
+  margin: 0;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  flex: none; /* Prevent paragraphs from stretching */
+}
+.section-text .name {
+  color: #0056b3;
+}
+/* Contact Section Styling */
+#contact {
+  padding: 60px 20px;
+  background: linear-gradient(to right, #f9f9f9, #e3f2fd);
+}
+
+.section-content {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-image {
+  flex: 1;
+  text-align: center;
+  animation: fadeIn 2s ease-out;
+}
+
+.section-image img {
+  width: 300px;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.section-text {
+  flex: 2;
+}
+
+.section-text h1 {
+  font-size: 2.5em;
+  color: #0056b3;
+  margin-bottom: 20px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #6c8cd5;
+  box-shadow: 0 0 8px rgba(108, 140, 213, 0.3);
+}
+
+.contact-form button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #6c8cd5;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Social Links */
+.social-links a {
+  text-decoration: none;
+  color: #0056b3;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #6c8cd5;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 
   </style>
 </head>
 <body>
 
-  <!-- Navbar -->
+  <!-- Nav -->
   <div class="navbar">
     <a href="#logo">Logo</a>
     <a href="#about">About Me</a>
@@ -188,8 +478,9 @@
     <a href="#contact">Contact</a>
   </div>
 
-  <!-- Sections with Alternating Image Layout -->
+ 
   <section id="logo">
+    <div class="bubbles"></div>
     <div class="section-content">
       <div class="section-image">
         <img src="Screenshot 2024-11-11 200557.png" alt="Rayan Shehabi">
@@ -200,6 +491,7 @@
       </div>
     </div>
   </section>
+  
 
 
 
@@ -207,11 +499,13 @@
   <section id="about">
     <div class="section-content">
       <div class="section-image">
-     <img src="aboutme.jpg">
+        <img src="aboutme.jpg" alt="Reyan Shihabi">
       </div>
       <div class="section-text">
         <h1>About Me</h1>
-        <p><strong>Hi, I'm <span class="name">Rayan Shehabi</span>,</strong> a frontend developer with a passion for creating interactive digital experiences.</p>
+        <p>
+          <strong>Hi, I'm <span class="name">Reyan Shihabi</span>,</strong> a frontend developer with a passion for creating interactive digital experiences.
+        </p>
         <p>Currently, I'm pursuing a <strong>Software Development Diploma</strong> and actively expanding my skills through online courses and hands-on projects.</p>
         <p>As the <strong>co-founder of the Software Developers Club</strong> at my university, I collaborate on innovative tech projects and mentor aspiring developers.</p>
         <p>I'm also deeply committed to <strong>volunteer work</strong>, using my tech skills to give back to the community and make a positive impact.</p>
@@ -219,6 +513,7 @@
       </div>
     </div>
   </section>
+  
   
 
   <section id="education">
@@ -229,8 +524,8 @@
       <div class="section-text">
         <h1>Education</h1> <br>
         <p><strong>Diploma in Software Development</strong></p> <br>
-        <p><em>University Name</em> (In Progress)</p> <br>
-        <p><strong>Year Started – Present</strong></p> <br>
+        <p><em>Gaziantep university</em> (In Progress)</p> <br>
+        <p><strong>2023 – Present</strong></p> <br>
         
         <p>Currently pursuing a diploma in Software Development, where I am learning core concepts in programming, web development, and computer science. My coursework includes:</p> <br>
         
@@ -310,33 +605,98 @@
     </div>
   </section>
 
-  <!-- Contact Section with Form -->
+ 
   <section id="contact">
-    <div class="section-content">
-      <div class="section-image">
-        <img src="Premium Vector _ Contact us flat.jpeg">
+    <div class="section-content" style="display: flex; flex-direction: column; align-items: center; max-width: 800px; margin: auto; padding: 20px; text-align: center; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+      <div class="section-image" style="margin-bottom: 20px;">
+        <img src="Premium Vector _ Contact us flat.jpeg" alt="Contact Us" style="max-width: 100%; border-radius: 10px;">
       </div>
       <div class="section-text">
-        <h1>Contact Me</h1>
-        <div class="contact-form">
-          <input type="text" placeholder="Your Name" required>
-          <input type="email" placeholder="Your Email" required>
-          <textarea rows="4" placeholder="Your Message" required></textarea>
-          <button class="button">Send Message</button>
+        <h1 style="font-size: 2rem; margin-bottom: 10px; color: #0056b3;">Contact Me</h1>
+        <form class="contact-form" style="display: flex; flex-direction: column; gap: 15px; width: 100%; max-width: 500px; margin: auto;">
+          <label for="name" style="font-size: 1rem; text-align: left;">Your Name</label>
+          <input type="text" id="name" placeholder="Enter your name" required style="padding: 10px; font-size: 1rem; border: 1px solid #ccc; border-radius: 5px;">
+  
+          <label for="email" style="font-size: 1rem; text-align: left;">Your Email</label>
+          <input type="email" id="email" placeholder="Enter your email" required style="padding: 10px; font-size: 1rem; border: 1px solid #ccc; border-radius: 5px;">
+  
+          <label for="message" style="font-size: 1rem; text-align: left;">Your Message</label>
+          <textarea id="message" rows="4" placeholder="Write your message here" required style="padding: 10px; font-size: 1rem; border: 1px solid #ccc; border-radius: 5px;"></textarea>
+  
+          <button type="submit" style="padding: 10px 20px; font-size: 1rem; color: white; background-color: #0056b3; border: none; border-radius: 5px; cursor: pointer;">Send Message</button>
+        </form>
+        <br>
+        <p style="font-size: 1rem; margin: 10px 0;">Follow me on social media:</p>
+        <div class="social-links" style="font-size: 1rem;">
+          <a href="#" style="text-decoration: none; color: #0056b3; font-weight: bold;">LinkedIn</a> |
+          <a href="#" style="text-decoration: none; color: #0056b3; font-weight: bold;">GitHub</a> |
+          <a href="#" style="text-decoration: none; color: #0056b3; font-weight: bold;">Twitter</a>
         </div>
-        <p>Follow me on social media:</p>
-        <p>LinkedIn | GitHub | Twitter</p>
       </div>
     </div>
   </section>
+  
+  
+  <script>
+    function validateForm() {
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+  
+      if (!name || !email || !message) {
+        alert("Please fill out all fields!");
+        return false;
+      }
+  
+      alert("Message sent successfully!");
+    }
+  </script>
+  
 
-  <!-- Footer -->
+
   <footer>
-    &copy; 2024 Rayan Shehabi. All Rights Reserved.
+    &copy; 2024 Reyan Shihabi. All Rights Reserved.
   </footer>
 
   <!-- JavaScript for Section Animation -->
+ 
+  
   <script>
+    document.addEventListener("DOMContentLoaded", () => {
+  const textSections = document.querySelectorAll("#about .section-text p");
+
+  textSections.forEach((section, index) => {
+    section.style.opacity = 0;
+    section.style.transform = "translateY(20px)";
+    section.style.transition = `opacity 0.6s ${index * 0.2}s, transform 0.6s ${index * 0.2}s`;
+
+    setTimeout(() => {
+      section.style.opacity = 1;
+      section.style.transform = "translateY(0)";
+    }, 200);
+  });
+});
+
+    document.addEventListener("DOMContentLoaded", () => {
+  const bubbleContainer = document.querySelector(".bubbles");
+
+  for (let i = 0; i < 30; i++) {
+    const bubble = document.createElement("span");
+    const size = Math.random() * 50 + 10;
+    const leftPosition = Math.random() * 100;
+    const delay = Math.random() * 5;
+    const duration = Math.random() * 10 + 5;
+
+    bubble.style.width = `${size}px`;
+    bubble.style.height = `${size}px`;
+    bubble.style.left = `${leftPosition}%`;
+    bubble.style.animationDelay = `${delay}s`;
+    bubble.style.animationDuration = `${duration}s`;
+
+    bubbleContainer.appendChild(bubble);
+  }
+});
+
     const sections = document.querySelectorAll("section");
 
     const options = {
