@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Portfolio</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: #333;
+      background-color: #f4f9fd;
+    }
+
+    /* Navbar */
+    .navbar {
+      position: fixed;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      max-width: 900px;
+      display: flex;
+      justify-content: space-around;
+      background-color: #6c8cd5;
+      padding: 0.8rem 1rem;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+
+    .navbar a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+      border-radius: 10px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .navbar a:hover {
+      background-color: #ffffff22;
+      transform: scale(1.1);
+    }
+
+    /* Sections */
+    section {
+      min-height: 100vh;
+      padding: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      transition: transform 0.5s ease;
+      color: #4d4d4d;
+      background-color: #e3f2fd;
+      border-radius: 20px;
+      margin: 20px;
+    }
+
+    section h1 {
+      font-size: 2rem;
+      color: #ffffff;
+      background-color: #6c8cd5;
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 30px;
+      margin-bottom: 1rem;
+    }
+
+    section p {
+      font-size: 1.1rem;
+      color: #5f6368;
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 10px;
+      background-color: #ffffff;
+      border-radius: 20px;
+    }
+
+    /* Alternating Layout for Sections */
+    .section-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .section-image {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      background-color: #a1c4fd;
+      margin: 20px;
+      flex-shrink: 0;
+      overflow: hidden; /* Ensures the image stays within the rounded container */
+    }
+
+    .section-text {
+      max-width: 500px;
+      padding: 10px;
+      text-align: left;
+    }
+
+    /* Alternating section image positions */
+    .section:nth-child(odd) .section-content {
+      flex-direction: row;
+    }
+
+    .section:nth-child(even) .section-content {
+      flex-direction: row-reverse;
+    }
+
+    /* Image fit inside the circle */
+    .section-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Ensures the image covers the container without distortion */
+    }
+
+    /* Colors and styles for each section */
+    #logo { background-color: #e0f7fa; }
+    #about { background-color: #f1f8e9; }
+    #education { background-color: #e3f2fd; }
+    #skills { background-color: #fce4ec; }
+    #experience { background-color: #e1f5fe; }
+    #achievements { background-color: #fff3e0; }
+    #contact { background-color: #ffebee; }
+
+    /* Button styles for interaction */
+    .button {
+      padding: 0.6rem 1.2rem;
+      border: 2px solid #6c8cd5;
+      color: #6c8cd5;
+      background: transparent;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+    }
+
+    .button:hover {
+      color: #ffffff;
+      background-color: #6c8cd5;
+    }
+
+    /* Footer */
+    footer {
+      padding: 1rem;
+      text-align: center;
+      background-color: #6c8cd5;
+      color: #ffffff;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+    }
+
+    /* Animations */
+    section {
+      opacity: 0;
+      transform: translateY(100px);
+    }
+
+    section.show {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <a href="#logo">Logo</a>
+    <a href="#about">About Me</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <!-- Sections with Alternating Image Layout -->
+  <section id="logo">
+    <div class="section-content">
+      <div class="section-image">
+        <img src="Screenshot 2024-11-11 200557.png" alt="Rayan Shehabi">
+      </div>
+      <div class="section-text">
+        <h1>Welcome to my portfolio! Take a look around.</h1>
+        <p style="color: #6c8cd5;">Let's Create Something Amazing Together!!</p>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <section id="about">
+    <div class="section-content">
+      <div class="section-image">
+     <img src="aboutme.jpg">
+      </div>
+      <div class="section-text">
+        <h1>About Me</h1>
+        <p><strong>Hi, I'm <span class="name">Rayan Shehabi</span>,</strong> a frontend developer with a passion for creating interactive digital experiences.</p>
+        <p>Currently, I'm pursuing a <strong>Software Development Diploma</strong> and actively expanding my skills through online courses and hands-on projects.</p>
+        <p>As the <strong>co-founder of the Software Developers Club</strong> at my university, I collaborate on innovative tech projects and mentor aspiring developers.</p>
+        <p>I'm also deeply committed to <strong>volunteer work</strong>, using my tech skills to give back to the community and make a positive impact.</p>
+        <p>With a drive to constantly learn and grow, I’m always excited to build solutions that make a real difference.</p>
+      </div>
+    </div>
+  </section>
+  
+
+  <section id="education">
+    <div class="section-content">
+      <div class="section-image">
+        <img src="edu.png">
+      </div>
+      <div class="section-text">
+        <h1>Education</h1> <br>
+        <p><strong>Diploma in Software Development</strong></p> <br>
+        <p><em>University Name</em> (In Progress)</p> <br>
+        <p><strong>Year Started – Present</strong></p> <br>
+        
+        <p>Currently pursuing a diploma in Software Development, where I am learning core concepts in programming, web development, and computer science. My coursework includes:</p> <br>
+        
+        <ul>
+          <li><strong>Frontend Development:</strong> HTML, CSS, JavaScript, React, Next.js</li>
+          <li><strong>Database Management:</strong> SQL, NoSQL</li>
+          <li><strong>Agile Development</strong></li>
+          <li><strong>Problem-Solving & Algorithms</strong></li>
+        </ul>
+        <br>
+        <p>I also engage in online courses to enhance my skills and stay updated with the latest technologies.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="section-content">
+      <div class="section-image">
+        <img src="skills.png">
+      </div>
+      <div class="section-text">
+        <h1>Skills</h1>
+        <ul class="skills-list">
+          <li><strong>Languages:</strong> Arabic (Native), Turkish (Fluent), English (Advanced)</li>
+          <li><strong>Frontend Development:</strong> HTML, CSS, JavaScript, React, Next.js</li>
+          <li><strong>Database:</strong> Neon, SQL</li>
+          <li><strong>Version Control:</strong> Git</li>
+          <li><strong>Soft Skills:</strong> Communication, Teamwork, Leadership, Time Management</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="section-content">
+      <div class="section-image">
+        <div class="section-image">
+          <img src="work.jpg">
+        </div>
+      </div>
+      <div class="section-text">
+        <h1>Work Experience</h1>
+        
+        <p><strong>Volunteer at Conferences</strong></p>
+        <p>I had the opportunity to volunteer at two major conferences, where I assisted with event coordination, attendee engagement, and overall event management. These experiences helped me develop strong organizational and communication skills, as well as the ability to work under pressure in fast-paced environments.</p>
+        
+        <p><strong>Co-Founder & Social Media Manager, Software Developers Club</strong></p>
+        <p>As a co-founder of the Software Developers Club at my university, I played an integral role in establishing the club's foundation and growing its community. Additionally, I manage the club's social media presence, promoting club events, activities, and fostering interaction with students and industry professionals.</p>
+        
+        <p><strong>Active Volunteer, Turkish Red Crescent</strong></p>
+        <p>I am also an active volunteer with the Turkish Red Crescent, where I assist in organizing community outreach initiatives and provide support during emergencies. My work involves helping those in need and contributing to the Turkish Red Crescent's mission to provide humanitarian aid both locally and nationally.</p>
+      </div>
+    </div>
+  </section>
+  
+  
+
+  <section id="achievements">
+    <div class="section-content">
+      <div class="section-text">
+        <h1>Achievements</h1>
+        <ul class="achievements-list">
+          <li><strong>Co-Founder of the Software Developers Club:</strong> Played a key role in establishing and growing the Software Developers Club at university. Provided leadership and contributed to the club's tech projects and activities.</li>
+          <li><strong>Social Media Manager for Software Developers Club:</strong> Managed the social media presence of the club, increasing its visibility and engagement through targeted campaigns and consistent content updates.</li>
+          <li><strong>Active Volunteer with Turkish Red Crescent (Kızılay):</strong> Contributed to humanitarian efforts by volunteering with the Turkish Red Crescent, offering support to communities in need during emergencies.</li>
+          <li><strong>Volunteer at Major Conferences:</strong> Volunteered at two major conferences, providing assistance with event coordination, logistics, and attendee engagement, which honed my organizational and communication skills.</li>
+          <li><strong>Organizer of Charity Events:</strong> Helped organize an event for orphaned children at Karam House, where I served as an organizer, artist (doing face painting), and photographer, creating a memorable experience for the children.</li>
+          <li><strong>Contributed to Atatürk Anma ve Gençlik Spor Günü:</strong> Helped organize a community breakfast to promote sports and health education.</li>
+          <li><strong>Collaborative Tech Project Involvement:</strong> Contributed to team projects, including a car-following system, by collaborating on coding, problem-solving, and design.</li>
+          <li><strong>Next.js Project Integration:</strong> Worked on a Next.js project integrating a Neon database, helping develop practical technical skills through hands-on coding and database management.</li>
+          <li><strong>Mentorship Role in Software Developers Club:</strong> Actively mentored new members of the Software Developers Club, teaching them core programming skills and guiding them through tech projects.</li>
+          <li><strong>Library Opening Volunteer:</strong> Volunteered during the opening of a small library for children in Gaziantep (İslahiye), providing emotional support and helping children adjust to their new learning environment.</li>
+          <li><strong>Speaker on Agile Development and Clean Code:</strong> Delivered presentations on Agile development methodologies and clean coding practices, sharing knowledge and encouraging best practices within my club.</li>
+          <li><strong>Continuous Skill Development:</strong> Consistently engaged in online learning to enhance my technical skills, including mastering HTML, CSS, JavaScript, and frameworks like React and Next.js.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section with Form -->
+  <section id="contact">
+    <div class="section-content">
+      <div class="section-image">
+        <img src="Premium Vector _ Contact us flat.jpeg">
+      </div>
+      <div class="section-text">
+        <h1>Contact Me</h1>
+        <div class="contact-form">
+          <input type="text" placeholder="Your Name" required>
+          <input type="email" placeholder="Your Email" required>
+          <textarea rows="4" placeholder="Your Message" required></textarea>
+          <button class="button">Send Message</button>
+        </div>
+        <p>Follow me on social media:</p>
+        <p>LinkedIn | GitHub | Twitter</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2024 Rayan Shehabi. All Rights Reserved.
+  </footer>
+
+  <!-- JavaScript for Section Animation -->
+  <script>
+    const sections = document.querySelectorAll("section");
+
+    const options = {
+      threshold: 0.3,
+      rootMargin: "0px 0px -100px 0px"
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, options);
+
+    sections.forEach(section => observer.observe(section));
+  </script>
+
+</body>
+</html>
